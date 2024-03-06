@@ -243,7 +243,7 @@ public class TagReader {
     
     func selectFile( tag: [UInt8] ) async throws -> ResponseAPDU {
         
-        let data : [UInt8] = [0x00, 0xA4, 0x02, 0x0C, 0x02] + tag
+        let data : [UInt8] = [0x00, 0xA4, 0x02, 0x0C, 0x01] + tag
         let cmd = NFCISO7816APDU(data:Data(data))!
         
         return try await send( cmd: cmd )
