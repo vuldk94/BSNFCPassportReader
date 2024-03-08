@@ -40,7 +40,8 @@ public class DataGroup {
             throw NFCPassportReaderError.TagNotValid
         }
 
-        print("vuldk", data[pos],binToHex(data[pos]), binToHex(data[pos]) & 0x0F )
+        print("vuldk nexttag", data)
+        print("vuldk nexttag", data[pos],binToHex(data[pos]), binToHex(data[pos]) & 0x0F )
         if binToHex(data[pos]) & 0x0F == 0x0F {
             tag = Int(binToHex(data[pos..<pos+2]))
             pos += 2
