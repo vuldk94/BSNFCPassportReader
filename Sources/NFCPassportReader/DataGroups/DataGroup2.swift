@@ -157,7 +157,7 @@ func getImage() -> UIImage? {
             [UInt8](data[offset..<offset+jpeg2000CodestreamBitmapHeader.count]) != jpeg2000CodestreamBitmapHeader {
             throw NFCPassportReaderError.UnknownImageFormat
         }
-        
         imageData = [UInt8](data[offset...])
+        print("vuldk image offset: ", offset, imageData);
     }
 }
